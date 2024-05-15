@@ -14,6 +14,7 @@ def home():
 def submit():
     if request.method == 'POST':
         try:
+
             # Get input from the user and parse it
             user_input = request.form['input']
             url_data = urlparse(user_input)
@@ -22,6 +23,7 @@ def submit():
             `scheme`: protocol used 'http' or 'https'
             `netloc`:   contains the network location of the resource.
             """
+
             if not (url_data.scheme and url_data.netloc):
                 raise ValueError()   # Raise error if invalid URL
             output = {}
