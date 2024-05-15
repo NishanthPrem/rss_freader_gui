@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Freader GUI</title>
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Home - RSS Feed Reader{% endblock %}
+
+{% block content %}
+    <h1>Welcome to the RSS Feed Reader</h1>
     <form action="/submit" method="post">
         <label for="input"><h2>Enter a valid URL <br><br></label>
         <input type="text" id="input" name="input">
         <button type="submit">Go!</button>
     </form>
-</body>
-</html>
+{% endblock %}

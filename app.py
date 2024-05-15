@@ -30,7 +30,7 @@ def submit():
                 output["Title"] = entry.title
                 output["Link"] = entry.links
                 output["Description"] = entry.description
-            return f"{output}"
+            return render_template('submit.html', output=output)
 
         except Exception as e:
             return f"Invalid URL, {e}"

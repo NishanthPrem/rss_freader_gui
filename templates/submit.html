@@ -1,11 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Freader GUI</title>
-     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Another Route - RSS Feed Reader{% endblock %}
+
+{% block content %}
+    <h1>Feed Details</h1>
+    {% if output %}
+        <div>
+            <h2>{{ output.Title }}</h2>
+            <p>{{ output.Description }}</p>
+            <p><a href="{{ output.Link[0].href }}">Click here to read more</a></p>
+        </div>
+    {% else %}
+        <p>No feed data available.</p>
+    {% endif %}
+{% endblock %}
