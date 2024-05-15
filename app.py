@@ -22,7 +22,7 @@ def submit():
             `scheme`: protocol used 'http' or 'https'
             `netloc`:   contains the network location of the resource.
             """
-            if not (url_data.scheme and url_data.netloc):  
+            if not (url_data.scheme and url_data.netloc):
                 raise ValueError()   # Raise error if invalid URL
             output = {}
             feed = feedparser.parse(user_input)
